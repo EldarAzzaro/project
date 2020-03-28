@@ -1,16 +1,10 @@
 {
   "contacts": [
     {
-      "first_name": "Anara",
-      "last_name": "surname",
+      "first_name": "Anarafsdffsdf",
+      "last_name": "surnamefsdf",
       "phone": "88888",
       "id": 10
-    },
-    {
-      "first_name": "Eldar",
-      "last_name": "Kiyamov",
-      "phone": "44444",
-      "id": 11
     }
   ]
 }
