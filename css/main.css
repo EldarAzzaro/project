@@ -73,12 +73,11 @@ body {
   font-weight: 900;
 }
 
-
 .contact-name {
   width: 28%;
 }
 
-.poiskovik{
+.poiskovik {
   font-size: 18px;
   padding: 10px;
   font-weight: bold;
@@ -87,13 +86,13 @@ body {
 .btn-del {
   cursor: pointer;
 }
-.btn-del:hover{
+.btn-del:hover {
   background-color: rgba(255, 32, 32, 0.76);
 }
 .btn-edit {
   cursor: pointer;
 }
-.btn-edit:hover{
+.btn-edit:hover {
   background-color: rgba(110, 21, 253, 0.76);
 }
 
@@ -138,30 +137,11 @@ body {
   filter: blur(5px);
 }
 
-#close{
+#close {
   cursor: pointer;
   float: right;
   background-color: rgba(255, 9, 9, 0.328);
   width: 12px;
-}
-
-.prikol {
-  margin-top: 160px;
-  font-size: 12px;
-  text-align: right;
-}
-
-.dop-fun{
-  text-align: right;
-}
-
-.dop-fun1 {
-  font-size: 12px;
-  background-color: black;
-  display: none;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
 }
 
 h1 {

@@ -10,8 +10,8 @@ let phone = $(".phone");
 let btn = $(".btn");
 let inp = $("input");
 let list = $(".list");
-let search_contact=$('.search-contact');
-let table=$('.contacts-list tbody');
+let search_contact = $(".search-contact");
+let table = $(".contacts-list tbody");
 render();
 
 //  ввод данных
@@ -20,7 +20,7 @@ btn.on("click", function() {
     first_name: first_name.val(),
     last_name: last_name.val(),
     phone: phone.val()
-  }
+  };
   if (inp.val() === "") {
     alert("Заполните поля!");
     return;
@@ -31,9 +31,9 @@ btn.on("click", function() {
     method: "post",
     url: "http://localhost:8000/contacts",
     data: contact,
-    success:render
-  })
-  inp.val('');
+    success: render
+  });
+  inp.val("");
 });
 
 //DELETE
@@ -70,22 +70,21 @@ $(".list").on("click", ".btn-edit", function(e) {
 });
 
 // закрытие по крестику
-$(document).on('click', '#close', function(e){
-  let id = $(e.target).attr('data-id');
+$(document).on("click", "#close", function(e) {
+  let id = $(e.target).attr("data-id");
   $(".modal-form").toggleClass("modal-form_2");
   $(".main-wrapper").toggleClass("main-wrapper_2");
-})
+});
 
 // закрытие по клику вне окна
-$(document).mouseup(function(e){
-  let popup = $('.modal-bord');
-  if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+$(document).mouseup(function(e) {
+  let popup = $(".modal-bord");
+  if (e.target != popup[0] && popup.has(e.target).length === 0) {
     $(".modal-form_2").toggleClass("modal-form_2");
     $(".main-wrapper_2").toggleClass("main-wrapper");
-    $(".main-wrapper_2").css('filter', 'none');
+    $(".main-wrapper_2").css("filter", "none");
   }
-})
-
+});
 
 // ИЗМЕНЕНИЯ В МОДАЛКЕ
 $(".modal-form").on("submit", function(e) {
@@ -135,30 +134,22 @@ function render() {
 
 // Поиск контактов
 $(".search-contact").on("keyup", function() {
-  let valik = $(this).val().toLowerCase(); 
+  let valik = $(this)
+    .val()
+    .toLowerCase();
   let tr = $(table).find("tr");
 
-  for (i = 0; i < tr.length; i++) { 
-    let name = $(tr[i]).find("td")[0]; 
-    
-    if (name) { 
-      let txtValue = name.innerText; 
+  for (i = 0; i < tr.length; i++) {
+    let name = $(tr[i]).find("td")[0];
 
-      if (txtValue.toLowerCase().indexOf(valik) > -1) { 
-        $(tr[i]).show() 
+    if (name) {
+      let txtValue = name.innerText;
+
+      if (txtValue.toLowerCase().indexOf(valik) > -1) {
+        $(tr[i]).show();
       } else {
-        $(tr[i]).hide() 
+        $(tr[i]).hide();
       }
     }
   }
 });
-
-// чисто ради прикола 
-$(document).on('click', '.dop-fun', function(e){
-  $('.dop-fun1').fadeIn();
-  $('.dop-fun1').css('display', 'block');
-  $('.wrapper').css('display', 'none');
-  $('.poiskovik').css('display', 'none');
-  $('.prikol').css('display', 'none');
-  $('.contacts-list').css('display', 'none');
-})
